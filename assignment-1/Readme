@@ -1,0 +1,78 @@
+1.All the programs have been compiled,tested and were successfully executed.
+2.Makefile is attached along in this submission. 
+3.The readme contains the output/results for all the programs(3-4 runs) which was worked in the CSIL lab machines.
+4.As per the instructions, prcess switching and thread swithcing were compiled on a single core machine. 
+5.The results of those will be elaborated more in the report.
+
+
+HOW TO COMPILE:
+
+Individual compilation:
+'make timer', 'make msys', 'make mfunction', 'make process_switch', 'make thread_switch'
+
+Makefile (for group compilation):
+make all
+
+
+1. Output timer.c
+
+plakshmi@asb9700u-d02:~/Desktop/assignments$ gcc hr_timer.c
+plakshmi@asb9700u-d02:~/Desktop/assignments$ ./a.out
+CLOCK_REALTIME Measured: 1000144084
+CLOCK_MONOTONIC Measured: 1000144942
+CLOCK_PROCESS_CPUTIME_ID Measured: 36106
+CLOCK_THREAD_CPUTIME_ID Measured: 36727
+
+
+2. Output function.c
+
+plakshmi@asb9700u-d04:~/Desktop/assignments$ ./a.out
+Minimal function call cost : 14.000000 
+plakshmi@asb9700u-d04:~/Desktop/assignments$ ./a.out
+Minimal function call cost : 17.000000 
+plakshmi@asb9700u-d04:~/Desktop/assignments$ ./a.out
+Minimal function call cost : 16.000000 
+
+3. Output system.c
+
+plakshmi@asb9700u-d04:~/Desktop/assignments$ gcc system.c
+plakshmi@asb9700u-d04:~/Desktop/assignments$ ./a.out
+Minimal sys call cost : 20
+plakshmi@asb9700u-d04:~/Desktop/assignments$ ./a.out
+Minimal sys call cost : 18
+plakshmi@asb9700u-d04:~/Desktop/assignments$ ./a.out
+Minimal sys call cost : 15
+
+
+4. Output process_switch
+
+plakshmi@asb9700u-d04:~/Desktop/assignments$ gcc test.c
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+
+Process switch time : 3967
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+
+Process switch time : 3170
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+
+Process switch time : 831
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+
+Process switch time : 791
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+
+Process switch time : 842
+
+
+
+5. Output thread_switch
+
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+Minimal Function Call :0.032000 
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+Minimal Function Call :0.045200 
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+Minimal Function Call :0.127300 
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
+Minimal Function Call :0.126800 
+plakshmi@asb9700u-d04:~/Desktop/assignments$ taskset 3 ./a.out
